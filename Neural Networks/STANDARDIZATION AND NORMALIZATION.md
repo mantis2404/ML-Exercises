@@ -1,4 +1,4 @@
-![[Pasted image 20250629200746.png]]
+![](Pasted%20image%2020250629200746.png)
 
 Loss function is asymmetric when data is not standardised/normalised and hence difficulty in convergence
 
