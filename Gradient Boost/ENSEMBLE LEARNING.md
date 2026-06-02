@@ -89,10 +89,15 @@ same idea as voting classifier
 | parallel (all models get train simultaneously on diff data) | sequential (a model is trained only after leaning from previous model)                   |
 | each model has equal say                                    | each model has different weights depending on how well it performed on the training data |
 
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/303c288a-9433-43c2-bd8d-52f50d8ca838" />
+
 ### STACKING
 - base models are trained
 - a new model (**meta model**) whose input is predictions of base models and the true target value is trained
 - it then assigns weights to models, the model which has better predictions had more weights
+
+  <img width="1400" height="775" alt="image" src="https://github.com/user-attachments/assets/de1a4571-e8b5-45bd-a0cd-c3d2cb12ab6a" />
+
 
 **PROBLEM**
 - same data used for training and predictions of base models
@@ -124,6 +129,9 @@ same idea as voting classifier
 - BUT none of these models are used for final prediction on test data, they were only to generate data for meta model
 - the final base models used are trained on complete training data (X_train)
 - meta model obtained earlier than base models
+
+<img width="850" height="284" alt="image" src="https://github.com/user-attachments/assets/dddd5f4e-6b28-4f6e-b935-d2a501f89497" />
+
 
 #### MULTI LAYER STACKING
 
