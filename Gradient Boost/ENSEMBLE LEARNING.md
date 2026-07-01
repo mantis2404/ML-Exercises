@@ -7,6 +7,14 @@
 - gives low bias and low variance
 > decision tree itself is a low bias,high variance model but ensemble of decision tree makes gives low bias and low variance
 
+### BIAS vs VARIANCE
+High bais -> underfiting  
+High Variance -> overfiting  
+> *BAG THE VARIANCE AND BOOST THE BIAS*
+
+To reduce overfiting (High Variance) we limit its resources  
+To reduce underfiting (High Bias) we assign more resources
+
 ### VOTING ENSEMBLE
 - base models having different algorithms
 - majority wins or mean of all the outputs
