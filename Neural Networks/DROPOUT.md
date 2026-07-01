@@ -7,7 +7,7 @@ set through dropout ratio(p)
 - like training on different neural network each epoch
 - increases accuracy ᯈ 2%
 
-![[Pasted image 20250629235856.png]]
+![](Pasted%20image%2020250629235856.png)
 
 - it reduces number of nodes
 - each node is equally treated rather giving importance to a single node (the node having more weight has more say in the output)
@@ -23,9 +23,10 @@ set through dropout ratio(p)
 
 ##### HOW ARE WEIGHTS CALCULATED?
 - each node need not be present in training, but during testing all nodes are present.
-- weight can not be properly calculated during training as node is not always present.
+- weight can not be properly calculated during training as node is not always present. Because nodes are missing, the surviving nodes have to work extra hard to carry the load, causing their weights to become artificially large.
 - w<sub>test</sub> = w<sub>train</sub> x (1-p)
-
+- slow inference
+  
 > (1-p) is the probability of node being present during the training, hence multiplied by the weight obtained after training
 
 #### TIPS
@@ -37,3 +38,11 @@ set through dropout ratio(p)
 - convergence is delayed
 - loss function varies as all nodes are not available all the time
 - hence debugging values of weights is also difficult
+
+## INVERSE DROPOUT
+- DURING TRAINING we randomly turn off some nodes. But this time, we immediately take the surviving nodes and mathematically boost their signal up to compensate for the missing nodes.
+- DURING TESTING we turn all all nodes but this time no calculation during testing, as everything is done during training
+- $w_{train-boosted} = \frac{w_{train}}{(1-p)}$
+- fast inference
+
+> $p$ is the probability of dropping a node. $(1-p)$ is the keep rate.
